@@ -3,7 +3,7 @@ from main import app
 
 client = TestClient(app)
 
-# Test Get
+# Test Get welcome
 def test_welcome():
     response = client.get("/")
     assert response.status_code == 200
