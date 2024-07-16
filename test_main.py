@@ -28,9 +28,9 @@ def test_predict_zero():
         "native_country": "United-States"
     }
 
-    response = client.post('/inference', json=data)
+    response = client.post('/', json=data)
     assert response.status_code == 200
-    assert response.json() == "<=50K"
+    assert response.json() == {"prediction": '<=50K'}
 
 # Test POST predict >50k:
 def test_predict_one():
@@ -51,6 +51,6 @@ def test_predict_one():
         "native_country": "India"
     }
 
-    response = client.post('/inference', json=data)
+    response = client.post('/', json=data)
     assert response.status_code == 200
-    assert response.json() == ">50K"
+    assert response.json() == {"prediction": '>50K'}
