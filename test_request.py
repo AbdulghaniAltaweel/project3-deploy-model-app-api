@@ -18,7 +18,7 @@ data = {
     "native_country": "India"
 }
 
-response = requests.post('http://project3-deploy-model-app-api.onrender.com/', data=json.dumps(data))
+response = requests.post('http://project3-deploy-model-app-api.onrender.com/inference', data=json.dumps(data))
 
 # Actually the live testing using render get an error when printing print(response.json()).
 # Thats why tried to figure out by switching to localhost api to test post request.

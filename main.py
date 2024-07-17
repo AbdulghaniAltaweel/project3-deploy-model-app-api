@@ -43,7 +43,7 @@ async def welcome():
   return "Hello World!"
 
 # POST that does model inference.
-@app.post("/")
+@app.post("/inference")
 async def predict(dataRow: CensusData):
     dataRow = {key.replace('_', '-'): [value] for key, value in dataRow.__dict__.items()}
     data = pd.DataFrame.from_dict(dataRow)
